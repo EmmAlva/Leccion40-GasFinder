@@ -29,3 +29,9 @@ header input{
 .fa-search{
   position: absolute;
 }
+
+/*MAP*/
+#map {
+  height: 400px;
+  width: 100%;
+ }

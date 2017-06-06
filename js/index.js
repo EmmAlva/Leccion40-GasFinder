@@ -12,8 +12,19 @@ const render = (root) => {
   }else{
     wrapper.append(StationDetails( _ => {
       render(root);
+
+
+    gmap..
+
+
+
+
+
     }));
   }
+
+
+
 
   root.append(wrapper);
 }
@@ -37,3 +48,4 @@ $( _ => {
   });
 
 });
+
