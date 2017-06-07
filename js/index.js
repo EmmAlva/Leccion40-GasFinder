@@ -13,10 +13,22 @@ const render = (root) => {
     wrapper.append(StationDetails( _ => {
       render(root);
 
+      //En index.js
 
-    gmap..
+   var Gmap = () => {
+      var wrapper = $('<div id="map"></div>');
+      wrapper.initMap = initMap.bind(null,wrapper.get(0));
+      return wrapper;
+    }  
 
 
+  var gmap = Gmap();
+  gmap.initMap();
+
+
+
+
+   
 
 
 
