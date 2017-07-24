@@ -1,20 +1,22 @@
-$(document).ready(function(){
-//En gmap.js
-var map;
-var initMap = function(parent) {
-	map = new GMaps({
-	el: '#map',
-	lat: -12.043333,
-	lng: -77.028333
+'use strict';
+
+const init = (parent) => {
+	let map = new GMaps({
+		el: parent, 
+		lat: state.selectedStation.lat,
+		lng: state.selectedStation.long
 	});
-	/*map.addMarker({
-	lat: -12.043333,
-	lng: -77.03,
-	title: 'Lima'
-	});*/
 
-	
-
+	map.addMarker({
+		lat:state.selectedStation.lat,
+		lng:state.selectedStation.long,
+		title:state.selectedStation.name,
+		zoom: 15
+	})
 }
-});
 
+const GMap = () =>{
+	const wrapper = $('<div id ="map"></div>');
+	wrapper.init = init.bind(null, wrapper.get(0)); //
+	return wrapper;
+}

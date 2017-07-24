@@ -1,44 +1,19 @@
 'use strict';
 
 const render = (root) => {
-  root.empty();
-  const wrapper = $('<div class="wrapper"></div>');
-  
-  wrapper.append(Header(_ => render(root)));
+  root.empty(); //limpia la raíz
+  const wrapper = $('<div class="wrapper"></div>');  
+  wrapper.append(Header(_ => render(root))); //componente Header(update) --> vacia e imprime;
   if(state.selectedStation == null){
-    wrapper.append(StationGrid( _=> {
-      render(root);
-    }));
-  }else{
-    wrapper.append(StationDetails( _ => {
-      render(root);
-
-      //En index.js
-
-   var Gmap = () => {
-      var wrapper = $('<div id="map"></div>');
-      wrapper.initMap = initMap.bind(null,wrapper.get(0));
-      return wrapper;
-    }  
-
-
-  var gmap = Gmap();
-  gmap.initMap();
-
-
-
-
-   
-
-
-
-    }));
+    wrapper.append(Search(_=> render(root)));
+    root.append(wrapper); //Seach(update), mantiene la cabecera y pinta la busqueda
+  } else{ //Significa que esta en la otra página;por lo que debe verse el mapa.
+    const gmap = GMap();
+    wrapper.append(gmap); //mapa
+    wrapper.append(StationDetails()); //detalles
+    root.append(wrapper); //una vez impreso, el mapa es cargado.
+    gmap.init(); //precisa que el RESTO ESTE CARGADO.
   }
-
-
-
-
-  root.append(wrapper);
 }
 
 const state = {
@@ -46,17 +21,14 @@ const state = {
   selectedStation: null
 };
 
-
-$( _ => {
-
-  getJSON('stations.json', (err, json) => {
-
+//JQuery, $.getJSON(url, data, success);
+$( _ => { //trayendo el objeto JSON, inicializa al cargar la página
+  getJSON('stations.json', (err, json) => {  //const getJSON = (url, cb) => {
     if (err) { return alert(err.message);}
-
     state.stations = json;
-
-    const root = $('.root');
-    render(root);
+    console.log(json);
+    const root = $('.root'); //enlaza el HTML para la impresión 
+    render(root); //imprime el root!!. 
   });
 
 });

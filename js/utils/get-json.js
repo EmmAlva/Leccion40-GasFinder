@@ -9,9 +9,9 @@ const getJSON = (url, cb) => {
 
     if (xhr.status !== 200) {
       return cb(new Error('Error loading JSON from ' + url + '(' + xhr.status + ')'));
-    }
+    }//(error,json) --> error mensaje
 
-    cb(null, xhr.response);
+    cb(null, xhr.response); //(error, json) -->data
   });
 
   xhr.open('GET', url);
