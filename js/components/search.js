@@ -3,7 +3,7 @@
 const Search = (update) => {
   const parent = $('<div></div>');
   const search = $('<div class="search"></div>');
-  const icon = $('<i class="fa fa-search" aria-hidden="true"></i>');
+  const icon = $('<i class="fa fa-search " aria-hidden="true"></i>');
   const input = $('<input type="text" placeholder="Ingresa tu distrito a buscar">');
   const stations = $('<div class="stations"></div>');
 

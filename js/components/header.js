@@ -7,7 +7,6 @@ const Header = (update) => {
   // const input = $('<input id="search" class ="station-filter" placeholder="Ingresa tu distrito a buscar">');
   // const iconInput = $('<span class="fa fa-search" aria-hidden="true"></span>');
 
-  header.append(title);
   // header.append(input);
   // header.append(iconInput);
   // 
@@ -20,6 +19,7 @@ const Header = (update) => {
   if(state.selectedStation != null){
     header.append(icon);
   }
+    header.append(title);
 
   return header;
 }
