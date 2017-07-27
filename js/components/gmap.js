@@ -22,6 +22,7 @@ const init = (parent) => {
 		zoom: 18
 	});
 	route.addEventListener('click', function(){
+		instructions.innerHTML="";
 		GMaps.geolocate({
 			success: function(position) {
 				map.setCenter(position.coords.latitude, position.coords.longitude);

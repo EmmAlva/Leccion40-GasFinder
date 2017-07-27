@@ -123,10 +123,16 @@ hr{
 }
 #instructions li:last-child div{
   font-size: 1rem !important;
-
 }
-@media screen min-width:  {
-   
- } {
-  
+@media only screen and (max-width: 500px) {
+   .space{
+    font-size: 0.8rem;
+    top: 4.5%;
+   }
+   #instructions li{
+    font-size: 0.75rem;
+   }
+   #instructions li:last-child div{
+  font-size: 0.8rem !important;
+  }
 }
