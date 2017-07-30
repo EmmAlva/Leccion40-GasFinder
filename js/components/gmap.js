@@ -95,3 +95,8 @@ const GMap = () =>{
 // https://github.com/hpneo/gmaps/issues/297
 // http://jsfiddle.net/mdares/82Dp2/
 // http://www.javacms.tech/questions/2130228/gmaps-js-route-with-distance
+// 
+// https://stackoverflow.com/questions/6623258/how-do-i-access-the-original-element-from-the-jquery-wrapper
+// https://learn.jquery.com/using-jquery-core/faq/how-do-i-pull-a-native-dom-element-from-a-jquery-object/
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+// 

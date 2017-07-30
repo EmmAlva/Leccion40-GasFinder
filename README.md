@@ -6,7 +6,7 @@ GasFinder es una aplicación que permite ubicar estaciones de servicios (Primax,
 
 La aplicación consta de 2 pantallas:
 
-1. La primera pantalla permite realizar la búsqueda de las estaciones de servicio en tiempo real. El sistema debe
+1. La primera pantalla permite realizar la búsqueda de las estaciones de servicio en tiempo real. El sistema debe filtrar la estación en función a la busqueda.
 
 2. La segunda pantalla muestra el detalle de la estación de servicio, debe mostrar un mapa y el detalle de la estación.
 
